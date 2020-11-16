@@ -52,7 +52,7 @@ class AddUrl extends React.Component{
                             <span>www.octavemusic.tk/</span>
                         </div>
                             <div className="col-5 pl-0 pr-md-3 pr-0">
-                                <input className="form-control" type="text" name="CustomUrlCode" value={this.state.CustomUrlCode} onChange={this.handleUrlCodeChange} placeholder="Custom Shortcode" />
+                                <input className="form-control" type="text" name="CustomUrlCode" value={this.state.CustomUrlCode} onChange={this.handleUrlCodeChange} placeholder="Custom Code" />
                             </div>
                         </div>				
                     </div>

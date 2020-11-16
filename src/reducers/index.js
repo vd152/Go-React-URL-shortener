@@ -1,7 +1,11 @@
 export default (state = [], action) => {
     switch (action.type) {
       case "FETCH_URL":
-        return {urls: action.payload.urls.reverse()};
+        if(action.payload.urls){
+          return {urls: action.payload.urls.reverse()};
+        }else{
+          return {urls: []};
+        }
       case "ADD_URL":
         return {urls: [...state.urls, action.payload].reverse()};
       case "DELETE_URL":

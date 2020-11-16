@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Fetch all URLs
 export const fetchAll = () => async dispatch => {
-    const response = await axios.get('https://www.octavemusic.tk/');
+    const response = await axios.get('https://www.octavemusic.tk/all');
     
     if(response.data){
         return dispatch({

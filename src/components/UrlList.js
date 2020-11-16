@@ -22,13 +22,18 @@ class UrlList extends React.Component{
 
     renderList=()=>{
         const urls = this.props.urls;
+        if(urls.length){
         return urls.map(url => {
             return (
                 <React.Fragment key={url.id}>
                     <UrlCard longUrl={url.longUrl} shortUrl={url.shortUrl} id={url.id} code={url.urlCode}/>
                 </React.Fragment>
             );
+        
         });
+        }else{
+            return <div style={{color: "white"}}>Add your first URL!!</div>;
+        }
     }
 
     render(){
