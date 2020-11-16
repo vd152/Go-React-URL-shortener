@@ -1,49 +1,61 @@
 import React from 'react';
 import UrlCard from './UrlCard';
+import { connect } from "react-redux";
+import {fetchAll} from '../actions/index';
 
 class UrlList extends React.Component{
 
     constructor(props){
         super();
+        this.state = {
+           
+            isLoaded: false
+        }
     }
 
-    renderList(){
-        var urls = [
-            {
-                code: "123564",
-                longUrl: "https://google.com",
-                shortUrl: "www.octavemusic.tk/123564",
-                id: "1"
-            },
-            {
-                code: "9875",
-                longUrl: "https://github.com",
-                shortUrl: "www.octavemusic.tk/9875",
-                id: "2"
-            },
-            {
-                code: "85968574",
-                longUrl: "https://msit.in",
-                shortUrl: "www.octavemusic.tk/85968574",
-                id: "3"
-            }
-        ];
+
+    async componentDidMount() {
+        await this.props.fetchAll();
+        this.setState({ isLoaded: true});
+    }
+
+
+    renderList=()=>{
+        const urls = this.props.urls;
         return urls.map(url => {
             return (
                 <React.Fragment key={url.id}>
-                    <UrlCard longUrl={url.longUrl} shortUrl={url.shortUrl} id={url.id} code={url.code} />
+                    <UrlCard longUrl={url.longUrl} shortUrl={url.shortUrl} id={url.id} code={url.urlCode}/>
                 </React.Fragment>
             );
         });
     }
 
     render(){
-        return(
-            <div className="row justify-content-center mt-5">
-                {this.renderList()}
-            </div>
-        );
+        if(this.state.isLoaded){
+            return(
+                <div className="row justify-content-center mt-5">
+                    {this.renderList()}
+                </div>
+            );
+            
+        }else{
+            return (
+                <div className="row justify-content-center">
+                    <div className="col-12 text-center" style={{color: "white"}}>
+                        <br />
+                         <br />
+                        <h1>Good things take time.</h1>
+                        <img src="loading.gif" alt="load"></img>
+                    </div>
+                </div>
+            );
+        }
     }
 }
 
-export default UrlList;
+const mapStateToProps = state => {
+    return { urls: state.urls };
+};
+
+export default connect(mapStateToProps, { fetchAll })(UrlList);

@@ -50,7 +50,7 @@ body, html{
     font-size: 1.1em;
 }
 .form-group button:hover{
-    background-color: #b4b239;
+    background-color:  rgb(187, 82, 68);
     color: #ffffff;
 }
 
@@ -85,7 +85,8 @@ body, html{
 }
 
 .edit-button:hover{
-    background-color: #b4b239;
+    background-color:  rgb(187, 82, 68);
+    transform: rotate(35deg);
 }
 
 .delete-button{
