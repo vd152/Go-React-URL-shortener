@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
+body, html{
+    font-family: 'Goldman', cursive;
+    overflow-x: hidden;
+}
+
+.navbar-brand span{
+    font-size: 1.4em;
+}
+.control-label{
+    background-color: #0680b1;
+}
+.control-label span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-size: 1em;
+}
+
+svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+
+
+.form-control{
+    border-radius: 0 !important;
+    outline: none !important;
+}
+.form-control{
+    box-shadow: none!important;
+    border: none!important;
+}
+
+.form-group button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 75%;
+    background-color: #0680b1;
+    color:white;
+    font-size: 1.1em;
+}
+.form-group button:hover{
+    background-color: #148dbd;
+    color: #dee9ee;
+}
+
+.form-control::placeholder{
+    font-size: 0.em;
+}
+
+.display-form input{
+    background-color: #84c8e688;
+}
+
+.display-form .form-group span{
+    background-color: #6ab6d688;
+    font-size: 1em;
+    color: rgb(57, 58, 58);
+}
+
+@media(max-width: 768px){
+    .control-label span{
+        font-size: 0.7em;
+    }
+    svg{
+        height: 1.2em;
+        width: 1.2em;
+    }
+
+    .form-group button{
+        height: auto;
+    }
+
+    .form-control::placeholder{
+        font-size: 0.7em;
+    }
+}
+
