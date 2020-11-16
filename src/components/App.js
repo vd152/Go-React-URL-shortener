@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar  from './Navbar';
-import AddUrl from './addUrl';
+import AddUrl from './AddUrl';
 import UrlList from './UrlList';
 
 class App extends React.Component{

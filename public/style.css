@@ -20,7 +20,7 @@ body, html{
     font-size: 1em;
 }
 
-svg{
+.control-label svg{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -50,8 +50,8 @@ svg{
     font-size: 1.1em;
 }
 .form-group button:hover{
-    background-color: #148dbd;
-    color: #dee9ee;
+    background-color: #b4b239;
+    color: #ffffff;
 }
 
 .form-control::placeholder{
@@ -68,6 +68,38 @@ svg{
     color: rgb(57, 58, 58);
 }
 
+.edit-button{
+    background-color: #07465f;
+    position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: -10px;
+	right: -10px;
+	border-radius: 50%;
+    padding: 0;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid white;
+    transition: all 0.25s ease-in-out;
+}
+
+.edit-button:hover{
+    background-color: #b4b239;
+}
+
+.delete-button{
+    background-color: rgb(187, 82, 68);
+    border-radius: 0.25rem;
+    transition: all 0.25s ease-in-out;
+}
+.delete-button button{
+    color: white;
+}
+
+.delete-button:hover{
+    background-color: white;
+}
 @media(max-width: 768px){
     .control-label span{
         font-size: 0.7em;

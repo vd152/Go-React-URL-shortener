@@ -20,6 +20,12 @@ class UrlList extends React.Component{
                 longUrl: "https://github.com",
                 shortUrl: "www.octavemusic.tk/9875",
                 id: "2"
+            },
+            {
+                code: "85968574",
+                longUrl: "https://msit.in",
+                shortUrl: "www.octavemusic.tk/85968574",
+                id: "3"
             }
         ];
         return urls.map(url => {
