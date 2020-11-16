@@ -123,6 +123,7 @@ class UrlCard extends React.Component{
             
             <div className="col-md-4 p-0 m-xl-2 m-4">
                 <div className="card  mb-3">
+                    <div>Clicks: {this.props.count}</div>
                     <div className="card-body pb-0">
                         {this.editButton()}
                         {inputBody()}

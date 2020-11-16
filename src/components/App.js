@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar  from './Navbar';
 import AddUrl from './AddUrl';
 import UrlList from './UrlList';
+import Footer from './Footer';
 
 class App extends React.Component{
     render(){
@@ -10,6 +11,7 @@ class App extends React.Component{
                 <Navbar />
                 <AddUrl />
                 <UrlList />
+                <Footer />
             </div>
         );
     }

@@ -26,7 +26,7 @@ class UrlList extends React.Component{
         return urls.map(url => {
             return (
                 <React.Fragment key={url.id}>
-                    <UrlCard longUrl={url.longUrl} shortUrl={url.shortUrl} id={url.id} code={url.urlCode}/>
+                    <UrlCard longUrl={url.longUrl} shortUrl={url.shortUrl} id={url.id} code={url.urlCode} count={url.count}/>
                 </React.Fragment>
             );
         
