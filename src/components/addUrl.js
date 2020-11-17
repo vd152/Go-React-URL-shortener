@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { addUrl } from '../actions/index'
+import { addUrl } from '../actions/index';
+import validUrl from 'valid-url';
 
 class AddUrl extends React.Component{
 
@@ -18,11 +19,20 @@ class AddUrl extends React.Component{
     };
 
     handleSubmit = () => {
-        this.props.addUrl(this.state.LongUrl, this.state.CustomUrlCode);
-        this.setState({
-            LongUrl: "",
-            CustomUrlCode: ""
-        })
+        if(this.state.LongUrl != ""){
+            if(validUrl.isUri(this.state.LongUrl)){
+                this.props.addUrl(this.state.LongUrl, this.state.CustomUrlCode);
+                this.setState({
+                    LongUrl: "",
+                    CustomUrlCode: ""
+                });
+            }else{
+                alert("Invalid URL!");
+            }
+        }
+        else{
+            alert("Long URL cannot be empty");
+        }   
     };
 
     render(){

@@ -43,7 +43,7 @@ class UrlCard extends React.Component{
                     <label className="label">Long URL</label>
                     <input className="form-control" type="text" value={this.state.longUrl} onChange={e=>{
                         this.setState({ longUrl: e.target.value});
-                    }}></input>
+                    }} required></input>
                 </div>
                 <div className="form-group">
                     <label className="label">Short URL</label>
@@ -78,8 +78,14 @@ class UrlCard extends React.Component{
     submitButton = () => {
         return(
             <p className="btn edit-button" type="submit" onClick={()=>{
-                this.props.editUrl(this.props.id, this.state.longUrl, this.state.code);
-                this.setState({ edit: false});
+                if((this.state.longUrl != "") && (this.state.code != "")){
+                    this.props.editUrl(this.props.id, this.state.longUrl, this.state.code);
+                    this.setState({ edit: false});
+                }else{
+                    alert("New Url or code must not be empty.");
+                    this.setState({longUrl: this.props.longUrl, code: this.props.code});
+                }
+                
             }}>
                 <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" className="bi bi-arrow-right" fill="white" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
@@ -91,7 +97,7 @@ class UrlCard extends React.Component{
     dontEditButton = () => {
         return(
             <div className="text-center delete-button" onClick={() => {
-                this.setState({ edit: false})
+                this.setState({ edit: false, longUrl: this.props.longUrl, code: this.props.code});
             }}>
                 <button className="btn w-100 pl-0 pr-0 pt-1 pb-1 m-0">Nah! This is fine.</button>
             </div>

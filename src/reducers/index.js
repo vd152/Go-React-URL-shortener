@@ -7,9 +7,9 @@ export default (state = [], action) => {
           return {urls: []};
         }
       case "ADD_URL":
-        return {urls: [...state.urls, action.payload].reverse()};
+        return {urls: [action.payload, ...state.urls]};
       case "DELETE_URL":
-        return {urls: state.urls.filter(url => url.id !== action.payload).reverse()};
+        return {urls: state.urls.filter(url => url.id !== action.payload)};
       case "EDIT_URL":
         return {urls: state.urls.map(url => url.id === action.payload.id ? action.payload : url)}
   
